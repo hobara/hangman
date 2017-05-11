@@ -19,16 +19,11 @@ class Hangman
     @board = "_" * secret_word_length
   end
 
-  # def board
-  #   @board = [nil] * secret_word_length
-  # end
-
   def take_turn
     guess = guesser.guess
     matched_idx = referee.check_guess(guess)
     update_board(guess, matched_idx)
     guesser.handle_response
-    # update_board
   end
 
   def update_board(guess, matched_idx)
@@ -38,8 +33,6 @@ class Hangman
       i += 1
     end
   end
-
-
 
 end
 
